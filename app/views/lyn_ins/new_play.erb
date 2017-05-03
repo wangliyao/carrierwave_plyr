@@ -1,0 +1,28 @@
+<head>
+  <%= stylesheet_link_tag "plyr" %>
+  <%= javascript_include_tag "plyr" %>
+</head>
+<body>
+<header>
+</header>
+<main role="main" id="main">
+
+    <div class="player">
+      <video poster="<%= image_path "timg.jpg" %>" controls crossorigin>
+        <!-- 视频文件 -->
+        <source src="<%= @lyn_in.avatar.url %>" type="video/mp4">
+        <!-- 针对不支持 <video> 元素的兼容 -->
+        <a href="<%= @lyn_in.avatar.url %>">Download</a>
+      </video>
+    </div>
+
+</main>
+
+<script src="https://cdn.rangetouch.com/0.0.9/rangetouch.js" async></script>
+
+<!-- Sharing libary (https://shr.one) -->
+<script src="https://cdn.shr.one/0.1.9/shr.js"></script>
+<script>
+   plyr.setup();
+ </script>
+</body>

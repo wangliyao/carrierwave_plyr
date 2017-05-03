@@ -1,0 +1,23 @@
+<%- model_class = LynIn -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+  <dd><%= @lyn_in.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:score) %>:</strong></dt>
+  <dd><%= @lyn_in.score %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
+  <dd><%= @lyn_in.description %></dd>
+</dl>
+
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              lyn_ins_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_lyn_in_path(@lyn_in), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              lyn_in_path(@lyn_in),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
